@@ -1,0 +1,202 @@
+    <!DOCTYPE html>
+    <html lang="ja">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>結婚式のご案内 - xx & yy</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Shippori Mincho B1', serif;
+          background-color: #fff;
+          color: #1a1a1a;
+        }
+
+        /* 背景スライド */
+        .background-slideshow {
+          position: fixed;
+          top: 0; left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          overflow: hidden;
+        }
+
+        .background-slide {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-position: center;
+          opacity: 0;
+          transition: opacity 2s ease-in-out;
+        }
+
+        .background-slide.active {
+          opacity: 0.25;
+        }
+
+        .container {
+          max-width: 760px;
+          margin: 2em auto;
+          background: rgba(255, 255, 255, 0.88);
+          border: 5px solid #d4af37;
+          border-radius: 18px;
+          padding: 2.5em 1.5em;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+          text-align: center;
+          position: relative;
+          z-index: 1;
+        }
+
+        h1 {
+          color: #b22222;
+          font-size: 2.7em;
+          margin-bottom: 0.2em;
+        }
+
+        h2 {
+          color: #800000;
+          margin-top: 2.2em;
+          font-size: 1.5em;
+          border-bottom: 2px solid #d4af37;
+          display: inline-block;
+          padding-bottom: 0.3em;
+        }
+
+        p {
+          font-size: 1.05em;
+          line-height: 1.8;
+          margin: 1em 0;
+        }
+
+        a {
+          color: #b22222;
+          text-decoration: underline;
+        }
+
+        .ornament {
+          width: 100%;
+          border-top: 3px solid #d4af37;
+          margin-bottom: 2em;
+          position: relative;
+        }
+
+        .footer {
+          font-size: 0.9em;
+          color: #555;
+          margin-top: 3em;
+          border-top: 1px solid #ccc;
+          padding-top: 1em;
+        }
+
+        /* 本文中スライドショー */
+        .photo-slideshow {
+          position: relative;
+          width: 100%;
+          max-width: 600px;
+          margin: 2em auto;
+          overflow: hidden;
+          border-radius: 12px;
+          border: 3px solid #d4af37;
+        }
+
+        .photo-slideshow img {
+          width: 100%;
+          display: none;
+          object-fit: cover;
+          height: 350px;
+        }
+
+        .photo-slideshow img.active {
+          display: block;
+        }
+
+        @media (max-width: 600px) {
+          h1 { font-size: 2em; }
+          h2 { font-size: 1.2em; }
+          p  { font-size: 1em; }
+          .photo-slideshow img { height: 220px; }
+        }
+      </style>
+    </head>
+    <body>
+      <!-- 背景スライド -->
+      <div class="background-slideshow">
+        <div class="background-slide" style="background-image: url('/Users/kogatomonari/Desktop/名称未設定フォルダ 2/meijijingu-torii.jpg');"></div>
+        <div class="background-slide" style="background-image: url('https://s3-ap-northeast-1.amazonaws.com/thegate/2021/07/15/12/23/12/meijijingu-torii.jpg');"></div>
+        <div class="background-slide" style="background-image: url('https://www.meijikinenkan.gr.jp/wedding/assets/img/party-space/detail/emile/page_header.jpg');"></div>
+        <div class="background-slide" style="background-image: url('https://www.meijikinenkan.gr.jp/wedding/assets/img/party-space/detail/emile/img_01.png');"></div>
+        <div class="background-slide" style="background-image: url('https://www.meijikinenkan.gr.jp/wedding/assets/img/reason/img_06.jpg');"></div>
+      </div>
+
+      <div class="container">
+        <div class="ornament"></div>
+
+        <h1>結婚式のご案内</h1>
+        <p>xx & yy より</p>
+
+        <h2>ご挨拶</h2>
+        <p>
+          このたび、私たちxxとyyは結婚することとなりました。<br />
+          日頃お世話になっている皆さまに感謝を込めて、ささやかながら挙式を行います。<br />
+          ご多用のところ恐縮ですが、ぜひご出席賜りますようお願い申し上げます。
+        </p>
+
+        <h2>写真スライドショー</h2>
+        <div class="photo-slideshow">
+          <img src="https://www.meijikinenkan.gr.jp/wedding/assets/img/ceremony/img_01.jpg" class="active" alt="写真1">
+          <img src="https://www.meijikinenkan.gr.jp/wedding/assets/img/cuisine/img_03.jpg" alt="写真2">
+          <img src="https://wpcontents.weddingpark.net/image/hall/071b/fit600x360/A7BWFt4IXD7nPTBxzZP0SArtKJ4it9wo.jpg?format=webp" alt="写真3">
+          <img src="https://jyun-en.jp/wp/wp-content/uploads/2022/12/pixta_92498615_M-1536x1024.jpg" alt="写真3">
+        </div>
+
+        <h2>挙式のご案内</h2>
+        <p><strong>■日付：</strong> 2025年10月23日（木）</p>
+        <p><strong>■時間：</strong> 10時40分 -15時00分予定</p>
+        <p><strong>■場所：</strong> QQ</p>
+        <p><a href="https://www.google.com/maps/place/%E6%98%8E%E6%B2%BB%E7%A5%9E%E5%AE%AE/@35.6763976,139.6993259,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cb79a4c26e5:0x8fca893849103f73!8m2!3d35.6763976!4d139.6993259!16zL20vMDFxX2s5?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoASAFQAw%3D%3D">▶ Googleマップで開く</a></p>
+
+        <h2>出欠のご確認</h2>
+        <p>下記に記載しているお問いわせ配下に記載している方法にてお気軽にご連絡ください。</p>
+
+        <h2>ドレスコード・注意事項</h2>
+        <p>和装・洋装どちらでも構いません。お気軽にご参加ください。</p>
+        <p>駐車場は会場にございます。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>何かご不明点がございましたら、以下の連絡先または、LINEまでご連絡ください。</p>
+        <p><strong>■メール：</strong> llll@gmail.com</p>
+        <p><strong>■電話番号：</strong> 000-1111-0000</p>
+
+        <div class="footer">&copy; xx & yy Wedding Invitation</div>
+      </div>
+
+      <script>
+        // 背景スライド切り替え
+        const bgSlides = document.querySelectorAll('.background-slide');
+        let currentBg = 0;
+        function showBackgroundSlide() {
+          bgSlides.forEach((s, i) => s.classList.remove('active'));
+          bgSlides[currentBg].classList.add('active');
+          currentBg = (currentBg + 1) % bgSlides.length;
+        }
+        showBackgroundSlide();
+        setInterval(showBackgroundSlide, 5000);
+
+        // 写真スライド切り替え
+        const photoSlides = document.querySelectorAll('.photo-slideshow img');
+        let currentPhoto = 0;
+        function showPhotoSlide() {
+          photoSlides.forEach((img, i) => img.classList.remove('active'));
+          photoSlides[currentPhoto].classList.add('active');
+          currentPhoto = (currentPhoto + 1) % photoSlides.length;
+        }
+        showPhotoSlide();
+        setInterval(showPhotoSlide, 4000);
+      </script>
+    </body>
+    </html>
