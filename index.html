@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>結婚式のご案内 - xx & yy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Shippori Mincho B1', serif;
+      background-color: #fff;
+      color: #1a1a1a;
+    }
+
+    /* 背景スライド */
+    .background-slideshow {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .background-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 2s ease-in-out;
+    }
+
+    .background-slide.active {
+      opacity: 0.25;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 2em auto;
+      background: rgba(255, 255, 255, 0.88);
+      border: 5px solid #d4af37;
+      border-radius: 18px;
+      padding: 2.5em 1.5em;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #b22222;
+      font-size: 2.7em;
+      margin-bottom: 0.2em;
+    }
+
+    h2 {
+      color: #800000;
+      margin-top: 2.2em;
+      font-size: 1.5em;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      padding-bottom: 0.3em;
+    }
+
+    p {
+      font-size: 1.05em;
+      line-height: 1.8;
+      margin: 1em 0;
+    }
+
+    a {
+      color: #b22222;
+      text-decoration: underline;
+    }
+
+    .ornament {
+      width: 100%;
+      border-top: 3px solid #d4af37;
+      margin-bottom: 2em;
+      position: relative;
+    }
+      margin-top: 3em;
+      border-top: 1px solid #ccc;
+      padding-top: 1em;
+    }
+
+    /* 本文中スライドショー */
+    .photo-slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 2em auto;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 3px solid #d4af37;
+    }
+
+    .photo-slideshow img {
+      width: 100%;
+      display: none;
+      object-fit: cover;
+      height: 350px;
+    }
+
+    .photo-slideshow img.active {
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2em; }
+      h2 { font-size: 1.2em; }
+      p  { font-size: 1em; }
+      .photo-slideshow img { height: 220px; }
+    }
+
+    /* セクション共通 */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      background: rgba(255,255,255,0.9);
+      border: 4px solid #d4af37; /* 金色 */
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    h2 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #b8860b;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.8;
+    }
+
+    /* アクセススライド */
+    .access-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .access-slider .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      text-align: center;
+      padding: 1rem;
+    }
+    .access-slider img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;  /* 枠内に収める */
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .caption {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* タイムライン */
+    .timeline {
+      list-style: none;
+      padding: 0;
+    }
+    .timeline li {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #d4af37;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🔐 パスワードゲート -->
+<script>
+  const SITE_PASSWORDS = ["タロスケ_すけそうだら","guest2","family"];
+  (function(){
+    let input = prompt("パスワードを入力してください：");
+    if(!SITE_PASSWORDS.includes(input)) {
+      alert("パスワードが違います。");
+      location.reload();
+    } else {
+      let count = localStorage.getItem("login_" + input) || 0;
+      localStorage.setItem("login_" + input, Number(count) + 1);
+    }
+  })();
+</script>
+
+<!-- 🌸 背景スライドショー -->
+ <div class="bg" aria-hidden="true">
+  <!-- 背景スライド1 -->
+  <div class="layer active" style="background-image:url('')"></div>
+  <!-- 背景スライド2 -->
+  <div class="layer" style="background-image:url('')"></div>
+</div>
+
+<!-- ご挨拶 -->
+<section id="greeting">
+  <h2>ご挨拶</h2>
+  <p>
+    本日は私たちの結婚式にご参列いただき、誠にありがとうございます。<br>
+    これまで支えてくださった皆さまへの感謝の気持ちを胸に、この日を迎えました。<br>
+    当日のご案内を以下にまとめましたので、どうぞご確認ください。
+  </p>
+</section>
+
+<!-- 式のご案内 -->
+<section id="overview">
+  <h2>式のご案内</h2>
+  <!-- 挿入画像（会場イメージ） -->
+  <img src="" alt="会場イメージ">
+  <p>
+    日時：<br>
+    会場：<br>
+    受付開始
+  </p>
+  <p>
+    厳かな雰囲気の中で挙式を執り行い、その後は披露宴にて皆さまと楽しいひとときを過ごしたく存じます。
+  </p>
+</section>
+
+<!-- アクセス（スライド8枚） -->
+<section id="access">
+  <h2>アクセスのご案内</h2>
+  <div class="access-slider">
+    <!-- 1枚目 -->
+    <div class="slide">
+      <img src="" alt="駅改札を出ます">
+      <div class="caption">1. ○○駅の改札を出ます</div>
+    </div>
+    <!-- 以下すべて同じ画像 -->
+    <div class="slide"><img src=""><div class="caption">2. 左手のコンビニを通過</div></div>
+    <div class="slide"><img src="g"><div class="caption">3. 大通りの交差点を渡ります</div></div>
+    <div class="slide"><img src=""><div class="caption">4. 信号を右折します</div></div>
+    <div class="slide"><img src=""><div class="caption">5. 公園を右手に直進</div></div>
+    <div class="slide"><img src=""><div class="caption">6. 会場の建物が見えてきます</div></div>
+    <div class="slide"><img src=""><div class="caption">7. 正門へお進みください</div></div>
+    <div class="slide"><img src=""><div class="caption">8. 受付は1階ロビーです</div></div>
+  </div>
+</section>
+
+<!-- タイムライン -->
+<section id="timeline">
+  <h2>当日の流れ</h2>
+  <ul class="timeline">
+    <li>14:30 受付開始</li>
+    <li>15:00 挙式</li>
+    <li>16:00 お食事・歓談</li>
+    <li>18:30 おひらき</li>
+  </ul>
+</section>
+
+<!-- ドレスコード -->
+<section id="dress">
+  <h2>ドレスコード・お願い</h2>
+  <!-- 挿入画像（和装イメージ） -->
+  <img src="" alt="和装イメージ">
+  <p>
+    和装・洋装いずれも歓迎いたします。<br>
+    季節柄、羽織物のご準備をおすすめいたします。<br>
+    香水は控えめにお願いいたします。
+  </p>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2>よくある質問</h2>
+  <p>
+    ご不明点はLINEにてご連絡ください。<br>
+    （メール・電話でのご対応は行っておりません）
+  </p>
+</section>
+
+<!-- フッター -->
+<footer>
+  &copy; 2025 Shinro & Shinpu. All Rights Reserved.<br>
+  本ページはご招待者さま限定のURLです。第三者への共有はご遠慮ください。
+</footer>
+
+<script>
+  // 背景スライド自動切り替え
+  const layers = document.querySelectorAll(".bg .layer");
+  let idx = 0;
+  setInterval(()=>{
+    layers[idx].classList.remove("active");
+    idx = (idx+1) % layers.length;
+    layers[idx].classList.add("active");
+  }, 5000);
+</script>
+
+</body>
+</html>
