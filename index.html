@@ -91,10 +91,19 @@ details {
 summary {
   color: #800000;
   font-weight: bold;
-      font-size: 1.05em;
-      line-height: 1.8;
-margin: -0.5em 10em 0;
+  font-size: 1.05em;
+  line-height: 1.8;
+  margin: 0 auto;   /* 左を10emにしたい場合は4値指定 */
   padding: 0.5em;
+
+  /* iOS Safariの縦書き防止 */
+  -webkit-writing-mode: horizontal-tb !important;
+  writing-mode: horizontal-tb;
+  -webkit-text-orientation: mixed;
+  text-orientation: mixed;
+
+  display: block;       /* 横書きを安定させる */
+  white-space: normal;  /* 不要な縦方向折り返し防止 */
 }
 
 details[open] {
