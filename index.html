@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>結婚式のご案内 - xx & yy</title>
+  <title>結婚式のご案内 - 智成 & 美妃</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1&display=swap');
 
@@ -67,16 +67,45 @@
       padding-bottom: 0.3em;
     }
 
-    p {
-      font-size: 1.05em;
-      line-height: 1.8;
-      margin: 1em 0;
-    }
+
+        p {
+          font-size: 1.05em;
+          line-height: 1.8;
+          margin: 1em 0;
+        }
 
     a {
       color: #b22222;
       text-decoration: underline;
     }
+
+details {
+  color: #000000;
+  border-bottom: 1px solid #d4af37;
+  border: 1px solid #d4af37;
+  border-radius: 4px;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em 0.5em 0;
+}
+
+summary {
+  color: #800000;
+  font-weight: bold;
+      font-size: 1.05em;
+      line-height: 1.8;
+margin: -0.5em 10em 0;
+  padding: 0.5em;
+}
+
+details[open] {
+  padding: 0.5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #d4af37;
+  margin-bottom: 0.5em;
+}
+
 
     .ornament {
       width: 100%;
@@ -84,6 +113,10 @@
       margin-bottom: 2em;
       position: relative;
     }
+
+    .footer {
+      font-size: 0.9em;
+      color: #555;
       margin-top: 3em;
       border-top: 1px solid #ccc;
       padding-top: 1em;
@@ -117,76 +150,13 @@
       p  { font-size: 1em; }
       .photo-slideshow img { height: 220px; }
     }
-
-    /* セクション共通 */
-    section {
-      max-width: 900px;
-      margin: 3rem auto;
-      background: rgba(255,255,255,0.9);
-      border: 4px solid #d4af37; /* 金色 */
-      border-radius: 16px;
-      padding: 2rem;
-    }
-    h2 {
-      text-align: center;
-      font-size: 1.8rem;
-      color: #b8860b;
-      margin-bottom: 1rem;
-    }
-    p {
-      line-height: 1.8;
-    }
-
-    /* アクセススライド */
-    .access-slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-    .access-slider .slide {
-      flex: 0 0 100%;
-      scroll-snap-align: center;
-      text-align: center;
-      padding: 1rem;
-    }
-    .access-slider img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;  /* 枠内に収める */
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .caption {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-    }
-
-    /* タイムライン */
-    .timeline {
-      list-style: none;
-      padding: 0;
-    }
-    .timeline li {
-      margin: 1rem 0;
-      padding-left: 1rem;
-      border-left: 3px solid #d4af37;
-    }
-
-    /* フッター */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.8rem;
-      color: #666;
-    }
   </style>
 </head>
 <body>
 
 <!-- 🔐 パスワードゲート -->
 <script>
-  const SITE_PASSWORDS = ["タロスケ_すけそうだら","guest2","family"];
+  const SITE_PASSWORDS = ["まりおオノノスケ"];
   (function(){
     let input = prompt("パスワードを入力してください：");
     if(!SITE_PASSWORDS.includes(input)) {
@@ -199,109 +169,246 @@
   })();
 </script>
 
-<!-- 🌸 背景スライドショー -->
- <div class="bg" aria-hidden="true">
-  <!-- 背景スライド1 -->
-  <div class="layer active" style="background-image:url('images/slide_026.jpg')"></div>
-  <!-- 背景スライド2 -->
-  <div class="layer" style="background-image:url('')"></div>
-</div>
-
-<!-- ご挨拶 -->
-<section id="greeting">
-  <h2>ご挨拶</h2>
-  <p>
-    本日は私たちの結婚式にご参列いただき、誠にありがとうございます。<br>
-    これまで支えてくださった皆さまへの感謝の気持ちを胸に、この日を迎えました。<br>
-    当日のご案内を以下にまとめましたので、どうぞご確認ください。
-  </p>
-</section>
-
-<!-- 式のご案内 -->
-<section id="overview">
-  <h2>式のご案内</h2>
-  <!-- 挿入画像（会場イメージ） -->
-  <img src="" alt="会場イメージ">
-  <p>
-    日時：<br>
-    会場：<br>
-    受付開始
-  </p>
-  <p>
-    厳かな雰囲気の中で挙式を執り行い、その後は披露宴にて皆さまと楽しいひとときを過ごしたく存じます。
-  </p>
-</section>
-
-<!-- アクセス（スライド8枚） -->
-<section id="access">
-  <h2>アクセスのご案内</h2>
-  <div class="access-slider">
-    <!-- 1枚目 -->
-    <div class="slide">
-      <img src="" alt="駅改札を出ます">
-      <div class="caption">1. ○○駅の改札を出ます</div>
-    </div>
-    <!-- 以下すべて同じ画像 -->
-    <div class="slide"><img src="tameshi_tananaka/テスト
-/slide_007.jpg"><div class="caption">2. 左手のコンビニを通過</div></div>
-    <div class="slide"><img src="tameshi_tananaka/テスト
-/slide_007.jpg"><div class="caption">3. 大通りの交差点を渡ります</div></div>
-    <div class="slide"><img src="test/slide_007.jpg"><div class="caption">4. 信号を右折します</div></div>
-    <div class="slide"><img src=""><div class="caption">5. 公園を右手に直進</div></div>
-    <div class="slide"><img src="test/slide_007.jpg"><div class="caption">6. 会場の建物が見えてきます</div></div>
-    <div class="slide"><img src=""><div class="caption">7. 正門へお進みください</div></div>
-    <div class="slide"><img src="test/slide_007.jpg"><div class="caption">8. 受付は1階ロビーです</div></div>
+  <!-- 背景スライド -->
+  <div class="background-slideshow">
+    <div class="background-slide" style="background-image: url('images/slide_001.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_002.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_003.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_004.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_005.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_006.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_007.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_008.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_009.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_010.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_011.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_012.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_013.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_014.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_015.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_016.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_017.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_018.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_019.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_020.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_021.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_022.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_023.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_024.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_025.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_026.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_027.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_028.jpg');"></div>
+    <div class="background-slide" style="background-image: url('images/slide_029.jpg');"></div>
   </div>
-</section>
 
-<!-- タイムライン -->
-<section id="timeline">
-  <h2>当日の流れ</h2>
-  <ul class="timeline">
-    <li>14:30 受付開始</li>
-    <li>15:00 挙式</li>
-    <li>16:00 お食事・歓談</li>
-    <li>18:30 おひらき</li>
-  </ul>
-</section>
+  <div class="container">
+    <div class="ornament"></div>
 
-<!-- ドレスコード -->
-<section id="dress">
-  <h2>ドレスコード・お願い</h2>
-  <!-- 挿入画像（和装イメージ） -->
-  <img src="" alt="和装イメージ">
-  <p>
-    和装・洋装いずれも歓迎いたします。<br>
-    季節柄、羽織物のご準備をおすすめいたします。<br>
-    香水は控えめにお願いいたします。
-  </p>
-</section>
+    <h1>結婚式のご案内</h1>
+    <p> 智成 & 美妃 より</p>
 
-<!-- FAQ -->
-<section id="faq">
-  <h2>よくある質問</h2>
-  <p>
-    ご不明点はLINEにてご連絡ください。<br>
-    （メール・電話でのご対応は行っておりません）
-  </p>
-</section>
+    <h2>ご挨拶</h2>
+    <p>
+       皆さまいかがお過ごしでしょうか。<br />
+      このたび　私たちは結婚式を挙げることになりました。 <br />
+      日頃お世話になっている皆さまに感謝を込めて、<br />
+      ささやかながら挙式を催したいと考えております。<br />
+      ご多用中、誠に恐縮ではございますが、<br />
+      ぜひご列席いただきたくご案内申し上げます<br />
+      <br />
+      敬具<br />
+      <br />
+      令和七年九月 吉日<br />
+      <br />
+      古閑　智成<br />
+　　　      美妃<br />
+    </p>
 
-<!-- フッター -->
-<footer>
-  &copy; 2025 Shinro & Shinpu. All Rights Reserved.<br>
-  本ページはご招待者さま限定のURLです。第三者への共有はご遠慮ください。
-</footer>
 
-<script>
-  // 背景スライド自動切り替え
-  const layers = document.querySelectorAll(".bg .layer");
-  let idx = 0;
-  setInterval(()=>{
-    layers[idx].classList.remove("active");
-    idx = (idx+1) % layers.length;
-    layers[idx].classList.add("active");
-  }, 5000);
-</script>
+    <h2>結婚式のご案内</h2>
+    <p><strong>■日付：</strong> 2025年10月23日（木）</p>
+    <p><strong>■時間：</strong> 10時40分 -15時00分予定</p>
+    <p><strong>■場所：</strong> 明治神宮(挙式)、明治記念館(披露宴)</p>
 
+    <details>
+    <summary>ご参列を検討していただいている方について確認事項</summary>
+  <p>今回、明治神宮で挙式、明治記念館にて披露宴を催す予定しております。</p>
+  <p>下記に集合場所、アクセス方法を簡易ながらまとめております。</p>
+  <p>ご参考までにご確認のほどよろしくお願いいたします。</p>
+  <p> </p>
+
+      <details>
+    <summary>集合場所について</summary>
+  <p>■ 挙式から参列予定の方：</p>
+  <p> ●各自でご仕度される場合・・・</p>
+  <p>  場所：明治神宮 神楽殿 控室</p>
+  <p>  時間：9:50までにご支度と受付を済ませて控室にお越し下さい。</p>
+  <p>  ご仕度場所：神楽殿の更衣室をご利用ください。近くに係員がいますのでお気楽にご連絡ください。</p>
+  <p>  荷物置き場：明治神宮 神楽殿 控室又はコインロッカー</p>
+  <p>            また、披露宴会場にはバスで移動するため荷物は全てまとめていただき移動時に</p>
+  <p>  ※明治神宮で着付け、ヘア・メイク申請済の方：客殿となり神楽殿とは異なりますのでご注意ください。</p>
+  <p> ●事前に着付け等の申請をしていただいている場合・・・</p>
+  <p>場所：明治神宮 客殿 美容室</p>
+  <p>時間：着付け・ヘア希望の方 7:40〜</p>
+  <p>     ヘア・メイクのみ希望の方 8:10〜</p>
+  <p>※当日の順番により前後する場合がございます。<br />
+     詳細については再度ご連絡させていただきます </p>
+  <p>● 披露宴から参列予定の方：</p>
+  <p>場所：明治記念館 来賓 控室</p>
+  <p>時間：12:30までにご支度と受付を済ませて控室にお越し下さい。</p>
+  <p>  ご仕度場所：神楽殿の更衣室をご利用ください。近くに係員がいますのでお気楽にご連絡ください。</p>
+    </details>
+
+      <details>
+    <summary>アクセス方法について</summary>
+  <p>アクセス方法とは</p>
+      </details>
+        
+        
+    </details>
+
+    <h2>各確認事項について</h2>
+    <p>下記にて確認事項を記載させていただきました。</p>
+    <p>ご確認の上、ご認識の程よろしくお願いいたします。</p>
+
+    <details>
+    <summary>ドレスコードについて</summary>
+  <p>和装・洋装など特に指定等はございませんので、お気軽にご参加ください。</p>
+    </details>
+
+    <details>
+    <summary>お車での参列を検討されている方について</summary>
+  <p>駐車場に関しましては、明治神宮、明治記念館共に駐車場は会場にございます。</p>
+<p>お車でご列席をご検討されてる場合、駐車許可証と駐車方法(入口場所、経路等)について<br />
+個別にて別途お伝えいたしますので、お気軽にご連絡ください。</p>
+    </details>
+
+    <details>
+    <summary>電車での参列を検討されている方について</summary>
+  <p>明治神宮の場合、JR山手線 【原宿駅】下車、西口又は<br />
+     東京メトロ 千代田線・副都心線【明治神宮前（原宿）駅】下車、2番出口から</p>
+  <p>明治神宮 原宿口へ入苑していただき10~15分ほどで神楽殿に到着いたします。</p>
+  <p>明治記念館の場合、JR中央・総武線　【信濃町駅】下車で徒歩5分前後にて到着いたします。</p>
+    </details>
+
+    <details>
+    <summary>タクシーでの列席を検討されている方について</summary>
+        <p>タクシーでのご列席に関しましては、明治神宮、明治記念館共に可能となっております。</p>
+        <p>明治神宮の場合、タクシー運転手方、明治神宮の代々木口前の警備員の方に下記の内容をお伝えください。
+            ■タクシー運転手の方に以下の三点をお伝えください。<br />
+            ・お車で入口は、1つのみで代々木口から入苑ください。<br />
+            ※原宿口、参宮橋口からは入れませんのでご認識のほどよろしくお願いいたします。</p>
+        <p>・明治神宮の住所は代々木神園町1-1ではなく、<br />
+            代々木1-1-2で入力していただくようお伝えください。</p>
+        <p>・境内は車道を徐行していただくようにお伝えください。<br />
+            （タヌキ等野生動物が飛び出すことがございます。）</p>
+        <p>●説明用参考資料<br />
+            ・https://www.meijikinenkan.gr.jp/wedding/access/<br />
+            ・https://www.meijijingu.or.jp/access/</p>
+        <p>代々木口の警備員の方に、結婚式に参列するため、<br />
+            神楽殿まで向かいたい旨、伝えていただき車両通行証を提出して下さい。</p>
+    </details>
+
+    <details>
+    <summary>自家用車での列席を検討されている方について</summary>
+        <p>自家用車でのご列席に関しましては、明治神宮、明治記念館共に駐車場完備しております。</p>
+        <p>明治神宮の場合、下記の内容をご確認ください。<br />
+            ■運転手の方に以下の三点を事前にご確認ください。<br />
+            ・お車で入口は、1つのみで代々木口から入苑ください。<br />
+            ※原宿口、参宮橋口からは入れませんのでご認識のほどよろしくお願いいたします。</p>
+        <p>・明治神宮の住所は代々木神園町1-1ではなく、<br />
+            代々木1-1-2でカーナビに入力していただいた方が良いかと思います。</p>
+        <p>・境内は車道に駐車場までの案内看板がございます。<br />
+            案内板に沿って徐行で駐車場まで走行して下さい。<br />
+            （タヌキ等野生動物が飛び出すことがございます。）</p>
+        <p>●説明用参考資料<br />
+        <a href="https://www.meijikinenkan.gr.jp/wedding/access/" target="_blank" rel="noopener noreferrer">明治神宮 公式サイト（別タブ）</a><br />
+        <a href="https://www.meijijingu.or.jp/access/" target="_blank" rel="noopener noreferrer">明治記念館 公式サイト（別タブ）</a></p>
+        <p>■代々木口の警備員の方に、結婚式に参列するため、<br />
+            神楽殿まで向かいたい旨、伝えていただき車両通行証を提出して下さい。</p>
+    </details>
+
+    <details>
+    <summary>アレルギーについて</summary>
+        <p>披露宴にご列席の皆様の中で、食物アレルギーをお持ちの場合、</p>
+        <p>9月30日迄にお気軽にご連絡ください。個別にて別途後対応させて頂きます。</p>
+    </details>
+
+    <details>
+    <summary>ご列席が難しくなった場合について</summary>
+        <p> 今回ご連絡させていただいたLINE又はお電話にてお気軽にご連絡ください。<br />
+     　　　　※10月3日迄に、お返事頂けますと幸いです。
+        </p>
+    </details>
+
+    <details>
+    <summary>お問い合わせ方法について</summary>
+    <p>別途ご不明点がございましたら、今回ご連絡させていただいたLINE又はお電話にて<br />
+        対応させていただきますので、お気軽にご連絡ください。</p>
+    </details>
+
+
+
+    <h2>思い出写真スライドショー</h2>
+    <div class="photo-slideshow">
+      <img src="images/slide_001.jpg" class="active" alt="写真1">
+      <img src="images/slide_002.jpg" alt="写真2">
+      <img src="images/slide_003.jpg" alt="写真3">
+      <img src="images/slide_004.jpg" alt="写真4">
+      <img src="images/slide_005.jpg" alt="写真5">
+      <img src="images/slide_006.jpg" alt="写真6">
+      <img src="images/slide_007.jpg" alt="写真7">
+      <img src="images/slide_008.jpg" alt="写真8">
+      <img src="images/slide_009.jpg" alt="写真9">
+      <img src="images/slide_010.jpg" alt="写真10">
+      <img src="images/slide_011.jpg" alt="写真11">
+      <img src="images/slide_012.jpg" alt="写真12">
+      <img src="images/slide_013.jpg" alt="写真13">
+      <img src="images/slide_014.jpg" alt="写真14">
+      <img src="images/slide_015.jpg" alt="写真15">
+      <img src="images/slide_016.jpg" alt="写真16">
+      <img src="images/slide_017.jpg" alt="写真17">
+      <img src="images/slide_018.jpg" alt="写真18">
+      <img src="images/slide_019.jpg" alt="写真19">
+      <img src="images/slide_020.jpg" alt="写真20">
+      <img src="images/slide_021.jpg" alt="写真21">
+      <img src="images/slide_022.jpg" alt="写真22">
+      <img src="images/slide_023.jpg" alt="写真23">
+      <img src="images/slide_024.jpg" alt="写真24">
+      <img src="images/slide_025.jpg" alt="写真25">
+      <img src="images/slide_026.jpg" alt="写真26">
+      <img src="images/slide_027.jpg" alt="写真27">
+      <img src="images/slide_028.jpg" alt="写真28">
+      <img src="images/slide_029.jpg" alt="写真29">
+      </div>
+
+
+    <div class="footer">&copy;  智成 &  美妃 Wedding Invitation</div>
+  </div>
+
+  <script>
+    // 背景スライド切り替え
+    const bgSlides = document.querySelectorAll('.background-slide');
+    let currentBg = 0;
+    function showBackgroundSlide() {
+      bgSlides.forEach((s, i) => s.classList.remove('active'));
+      bgSlides[currentBg].classList.add('active');
+      currentBg = (currentBg + 1) % bgSlides.length;
+    }
+    showBackgroundSlide();
+    setInterval(showBackgroundSlide, 5000);
+
+    // 写真スライド切り替え
+    const photoSlides = document.querySelectorAll('.photo-slideshow img');
+    let currentPhoto = 0;
+    function showPhotoSlide() {
+      photoSlides.forEach((img, i) => img.classList.remove('active'));
+      photoSlides[currentPhoto].classList.add('active');
+      currentPhoto = (currentPhoto + 1) % photoSlides.length;
+    }
+    showPhotoSlide();
+    setInterval(showPhotoSlide, 4000);
+  </script>
 </body>
 </html>
