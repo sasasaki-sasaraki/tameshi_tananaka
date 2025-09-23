@@ -116,6 +116,18 @@ details[open] summary {
 }
 
 
+ul {
+  /* 中央寄せ */
+  display: table;        /* ブロックのまま中央寄せに */
+  margin: 0 auto 1.5em;  /* 上下0, 左右auto */
+
+  /* 左に余白を追加して文章は左揃え */
+  padding-left: 1.5em;   /* ←ここで左空間を作る */
+  text-align: left;
+
+  list-style-position: inside; /* 点(・)と文字をそろえる */
+}
+
     .ornament {
       width: 100%;
       border-top: 3px solid #d4af37;
@@ -135,6 +147,11 @@ details[open] summary {
           text-align: center;
       }
 
+        .content {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 0 7em 0 12em;   /* 上 右 下 左 */
+}
 
     /* 本文中スライドショー */
     .photo-slideshow {
@@ -223,7 +240,7 @@ details[open] summary {
     <p class="center">智成 & 美妃 より</p>
 
     <h2>〜 ご挨拶 〜</h2>
-    <p class="center">
+      <div class="content"><p>
        皆さまいかがお過ごしでしょうか。<br />
       このたび　私たちは結婚式を挙げることになりました。 <br />
       日頃お世話になっている皆さまに感謝を込めて、<br />
@@ -231,7 +248,9 @@ details[open] summary {
       ご多用中、誠に恐縮ではございますが、<br />
       ぜひご列席いただきたくご案内申し上げます<br />
       <br />
-      敬具<br />
+      </p>
+    </div>
+      <p class="center">敬具<br />
       <br />
       令和七年九月 吉日<br />
       <br />
@@ -241,10 +260,21 @@ details[open] summary {
 
 
     <h2>〜 結婚式のご案内 〜</h2>
+      <ul>
+          <li>日付：2025年10月23日（木）</li>
+          <li>10時40分 -15時00分頃</li>
+          <li>場所：明治神宮(挙式)、明治記念館(披露宴)</li>
+      </ul>
+
+      
+      <div class="content">
     <p><strong>■日付：</strong> 2025年10月23日（木）</p>
     <p><strong>■時間：</strong> 10時40分 -15時00分予定</p>
     <p><strong>■場所：</strong> 明治神宮(挙式)、明治記念館(披露宴)</p>
-
+        </div>
+          
+          
+          
     <details>
     <summary>〜 ご参列を検討していただいている方について確認事項 〜</summary>
   <p>今回、明治神宮で挙式、明治記念館にて披露宴を催す予定しております。</p>
@@ -255,23 +285,25 @@ details[open] summary {
       <details>
     <summary>集合場所について</summary>
   <p>■ 挙式から参列予定の方：</p>
-  <p> ●各自でご仕度される場合・・・</p>
+      <div class="content">
+  <p> ●各自でご仕度される場合</p>
   <p>  場所：明治神宮 神楽殿 控室</p>
-  <p>  時間：9:50までにご支度と受付を済ませて控室にお越し下さい。</p>
-  <p>  ご仕度場所：神楽殿の更衣室をご利用ください。近くに係員がいますのでお気楽にご連絡ください。</p>
+  <p>  時間：9:50（ご支度と受付を済ませて控室にお越し下さい。）</p>
+  <p>  ご仕度場所：神楽殿の更衣室</p>
   <p>  荷物置き場：明治神宮 神楽殿 控室又はコインロッカー</p>
-  <p>            また、披露宴会場にはバスで移動するため荷物は全てまとめていただき移動時に</p>
-  <p>  ※明治神宮で着付け、ヘア・メイク申請済の方：客殿となり神楽殿とは異なりますのでご注意ください。</p>
-  <p> ●事前に着付け等の申請をしていただいている場合・・・</p>
+  <p>  ※1披露宴会場にはバスで移動するため荷物は全てまとめていただき移動時に忘れず持ち運んでください。</p>
+  <p> ●事前に着付け等の申請をしていただいている場合</p>
   <p>場所：明治神宮 客殿 美容室</p>
   <p>時間：着付け・ヘア希望の方 7:40〜</p>
   <p>     ヘア・メイクのみ希望の方 8:10〜</p>
-  <p>※当日の順番により前後する場合がございます。<br />
-     詳細については再度ご連絡させていただきます </p>
-  <p>● 披露宴から参列予定の方：</p>
+  <p>※当日の順番により前後する場合がございます。再度確認のほどよろしくお願いします。</p>
+        </div>
+  <p>■ 披露宴から参列予定の方：</p>
+      <div class="content">
   <p>場所：明治記念館 来賓 控室</p>
-  <p>時間：12:30までにご支度と受付を済ませて控室にお越し下さい。</p>
-  <p>  ご仕度場所：神楽殿の更衣室をご利用ください。近くに係員がいますのでお気楽にご連絡ください。</p>
+  <p>時間：12:30（ご支度と受付を済ませて控室にお越し下さい。）</p>
+  <p>  ご仕度場所：神楽殿の更衣室</p>
+        </div>
     </details>
 
       <details>
@@ -297,7 +329,7 @@ details[open] summary {
             東京メトロ 千代田線・副都心線【明治神宮前（原宿）駅】下車、2番出口から</p>
         <p>明治神宮 原宿口へ入苑していただき10~15分ほどで神楽殿に到着いたします。</p>
         <p>明治記念館の場合、JR中央・総武線　【信濃町駅】下車で徒歩5分前後にて到着いたします。</p>
-        <p>●説明用参考資料<br />
+        <p class="center">●説明用参考資料<br />
         <a href="https://www.meijijingu.or.jp/access/" target="_blank" rel="noopener noreferrer">明治神宮 公式サイト（別タブ）</a><br />
         <a href="https://www.meijikinenkan.gr.jp/wedding/access/" target="_blank" rel="noopener noreferrer">明治記念館 公式サイト（別タブ）</a></p>
     </details>
@@ -305,7 +337,7 @@ details[open] summary {
     <details>
     <summary>タクシーでの列席を検討されている方について</summary>
         <p>タクシーでのご列席に関しましては、明治神宮、明治記念館共に可能となっております。</p>
-        <p>明治神宮の場合、タクシー運転手方、明治神宮の代々木口前の警備員の方に下記の内容をお伝えください。
+        <p>明治神宮の場合、タクシー運転手方、明治神宮の代々木口前の警備員の方に下記の内容をお伝えください。<br />
             ■タクシー運転手の方に以下の三点をお伝えください。<br />
             ・お車で入口は、1つのみで代々木口から入苑ください。<br />
             ※原宿口、参宮橋口からは入れませんのでご認識のほどよろしくお願いいたします。</p>
@@ -313,7 +345,7 @@ details[open] summary {
             代々木1-1-2で入力していただくようお伝えください。</p>
         <p>・境内は車道を徐行していただくようにお伝えください。<br />
             （タヌキ等野生動物が飛び出すことがございます。）</p>
-        <p>●説明用参考資料<br />
+        <p class="center">●説明用参考資料<br />
         <a href="https://www.meijijingu.or.jp/access/" target="_blank" rel="noopener noreferrer">明治神宮 公式サイト（別タブ）</a><br />
         <a href="https://www.meijikinenkan.gr.jp/wedding/access/" target="_blank" rel="noopener noreferrer">明治記念館 公式サイト（別タブ）</a></p>
         <p>代々木口の警備員の方に、結婚式に参列するため、<br />
@@ -332,7 +364,7 @@ details[open] summary {
         <p>・境内は車道に駐車場までの案内看板がございます。<br />
             案内板に沿って徐行で駐車場まで走行して下さい。<br />
             （タヌキ等野生動物が飛び出すことがございます。）</p>
-        <p>●説明用参考資料<br />
+        <p class="center">●説明用参考資料<br />
         <a href="https://www.meijijingu.or.jp/access/" target="_blank" rel="noopener noreferrer">明治神宮 公式サイト（別タブ）</a><br />
         <a href="https://www.meijikinenkan.gr.jp/wedding/access/" target="_blank" rel="noopener noreferrer">明治記念館 公式サイト（別タブ）</a></p>
         <p>■代々木口の警備員の方に、結婚式に参列するため、<br />
@@ -348,7 +380,7 @@ details[open] summary {
     <details>
     <summary>ご列席が難しくなった場合について</summary>
         <p> 今回ご連絡させていただいたLINE又はお電話にてお気軽にご連絡ください。<br />
-     　　　　※10月3日迄に、お返事頂けますと幸いです。
+            ※10月3日迄に、お返事頂けますと幸いです。
         </p>
     </details>
 
